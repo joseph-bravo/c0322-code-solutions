@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Forms</title>
+  </head>
+  <body>
+    <form> <!-- omitted action attribute -->
+      <!-- EMAIL FORM -->
+
+      <h1>Coding Form!</h1>
+      <label for="email">Email</label>
+      <div>
+        <input type="email" id="email">
+      </div>
+
+      <!-- DROPDOWN -->
+
+      <label for="coding-reason">Why is coding cool?</label>
+      <div>
+        <select name="coding-reason" id="coding-reason" >
+          <option value="reason-default">Select an option</option>
+          <option value="reason-a">Because it's interesting</option>
+          <option value="reason-b">Because it's fun</option>
+          <option value="reason-c">Because it's powerful</option>
+        </select>
+      </div>
+
+      <!-- RADIO BOX -->
+      <div>
+        <p>Favorite Language</p>
+        <div>
+          <input type="radio" name="fav-lang" value="html" id="html">
+          <label for="html">HTML</label>
+
+          <input type="radio" name="fav-lang" value="css" id="css">
+          <label for="css">CSS</label>
+
+          <input type="radio" name="fav-lang" value="js" id="js">
+          <label for="js">JavaScript</label>
+        </div>
+      </div>
+
+      <!-- CHECKBOX -->
+      <div>
+        <p>Would you like to sign up for more information?</p>
+        <div>
+          <input type="checkbox" name="subscribe" id="subscribe">
+          <label for="subscribe">Sign me up!</label>
+        </div>
+      </div>
+
+      <!-- TEXT AREA -->
+
+      <div>
+        <label for="comment-box">Comments</label>
+        <div>
+          <textarea name="comment-box" id="comment-box"></textarea>
+        </div>
+      </div>
+
+      <!-- SUBMIT -->
+
+      <input type="submit" value="Submit">
+
+    </form>
+  </body>
+</html>
