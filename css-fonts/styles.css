@@ -4,3 +4,7 @@ p {
   font-family: 'Nunito';
   line-height: 1.5em;
 }
+
+h2 {
+  font-style: italic;
+}
