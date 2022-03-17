@@ -1,18 +1,9 @@
-/* font setting */
-
 * {
   font-family: "Brandon Grotesque", sans-serif;
 }
 
-::placeholder {
-  font-family: AtlasGrotesk, sans-serif;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-/* box sizing */
-
 #form-container {
+  max-width: 640px;
   width: 50%;
   margin: 0 auto;
 }
@@ -21,34 +12,55 @@
 select {
   display: block;
   width: 100%;
-  border: 1px solid gray;
+  border: 2px solid #cacdcc;
   border-radius: 6px;
-  height: 3em;
+  height: 57px;
 }
 
 .labeled-input input {
-  padding: 0.75em;
+  font-family: AtlasGrotesk, sans-serif;
+  font-size: 16pt;
+  padding-left: 16px;
+
+  /* padding-top: 9px; */
+}
+
+.labeled-input select {
+  background-color: #f3f3f3;
+  font-size: 16pt;
+  padding-left: 0.25rem;
+  border-radius: 4px;
+}
+
+option {
+  padding: 0;
 }
 
 h1 {
   font-weight: bold;
   text-align: center;
-  font-size: 1.25em;
-  letter-spacing: 0.05em;
+  font-size: 18pt;
+  letter-spacing: 0.07em;
   color: #ec5d57;
 }
 
 label {
+  display: block;
   font-weight: bold;
-  font-size: 0.75em;
-  padding-left: 0.5em;
+  font-size: 12pt;
+  padding-left: 16px;
+  margin-top: 16pt;
+  margin-bottom: 4pt;
 }
+
+/* ::placeholder {
+  font-family: AtlasGrotesk, sans-serif;
+  font-size: 16pt;
+} */
 
 #submit {
   text-align: end;
 }
-
-/* more */
 
 h1,
 label,
@@ -57,11 +69,13 @@ button {
 }
 
 button {
+  font-weight: 500;
   color: white;
   background-color: #ec5d57;
   border: 0;
-  border-radius: 60px;
-  padding: 0.5em 1em;
-  width: 6.5em;
-  font-weight: 500;
+  border-radius: 50px;
+  font-size: 16pt;
+  height: 48px;
+  width: 131px;
+  margin-top: 10pt;
 }
