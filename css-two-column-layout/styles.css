@@ -1,5 +1,11 @@
+* {
+  font-family: Karla, sans-serif;
+}
+
+/* font weights 400 and 700 */
+
 .container {
-  width: 75vw;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -7,47 +13,58 @@
   display: flex;
 }
 
+.col-25 {
+  flex-basis: 25%;
+}
+
 .col-50 {
   width: 50%;
-}
-
-.center-text {
-  text-align: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.col-25 {
-  width: 25%;
 }
 
 .col-75 {
   width: 75%;
 }
 
-/* font setting (weights 400 and 700) */
-* {
-  font-family: Karla, sans-serif;
+.col-100 {
+  width: 100%;
 }
 
-.section-infoblocks {
-  height: 600px;
-  justify-content: center;
-  align-items: space-between;
+.center-text {
+  text-align: center;
 }
 
-.infoblock {
-  margin: 2em 3rem;
-  min-height: auto;
-  align-items: space-between;
+.wrapping {
+  flex-wrap: wrap;
 }
 
-.infoblock h3 {
-  margin: 0;
+.v-spacer {
+  margin: 2rem;
 }
 
-.infoblock > img {
-  margin-bottom: auto;
+/* element-wide */
+
+button {
+  color: #d04941;
+  background-color: white;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 36pt;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 12pt;
+  margin-top: 2rem;
+}
+
+p {
+  font-weight: 400;
+  font-size: 11pt;
+  color: gray;
+}
+
+img {
+  width: 100%;
 }
