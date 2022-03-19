@@ -1,6 +1,22 @@
 /* fonts: avenir (normal), tiempos headline (normal + italic) */
+
+h1,
+h2 {
+  font-family: "Tiempos Headline", serif;
+}
+
+* {
+  font-family: Avenir, sans-serif;
+}
+
+/* utility */
 .container {
   width: 100vw;
+}
+
+.container > * {
+  padding-left: 7.5%;
+  padding-right: 7.5%;
 }
 
 .row {
@@ -8,20 +24,74 @@
 }
 
 .col-25 {
-  width: 25%;
+  flex-basis: 25%;
   margin: 0 auto;
 }
 
 .col-50 {
-  width: 50%;
+  flex-basis: 50%;
   margin: 0 auto;
 }
 
 .col-100 {
-  width: 100%;
+  flex-basis: 100%;
   margin: 0 auto;
 }
 
-.col-25 * {
-  margin: 0;
+.justify-left {
+  justify-content: left;
 }
+
+.justify-right {
+  justify-content: right;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.row-v-center {
+  height: 100%;
+  align-items: center;
+}
+
+.text-child-center > * {
+  text-align: center;
+}
+
+/* coloring */
+
+.bg-gray {
+  background-color: #4e4f4e;
+}
+
+.bg-lightgray {
+  background-color: #fafafa;
+}
+
+/* decor */
+
+.line-bottom {
+  border-bottom: 2px solid #e6e8eb;
+}
+
+/* universal target */
+button {
+  color: white;
+  background-color: #294464;
+  border: 0;
+  border-radius: 7px;
+  padding: 1em 1.5em; /* TEMPORARY */
+}
+
+/* header */
+
+/* hero image */
+
+/* adopted clinics */
+
+/* get started */
+
+/* main footer */
+
+/* privacy */
