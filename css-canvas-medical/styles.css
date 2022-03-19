@@ -1,0 +1,27 @@
+/* fonts: avenir (normal), tiempos headline (normal + italic) */
+.container {
+  width: 100vw;
+}
+
+.row {
+  display: flex;
+}
+
+.col-25 {
+  width: 25%;
+  margin: 0 auto;
+}
+
+.col-50 {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.col-100 {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.col-25 * {
+  margin: 0;
+}
