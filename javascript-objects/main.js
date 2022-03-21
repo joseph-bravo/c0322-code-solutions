@@ -20,10 +20,10 @@ var vehicle = {
   year: 2022
 };
 
-vehicle.color = 'blue';
-vehicle.isConvertible = true;
-console.log('vehicle color?:', vehicle.color);
-console.log('vehicle is convertible?:', vehicle.isConvertible);
+vehicle['color'] = 'blue';
+vehicle['isConvertible'] = true;
+console.log('vehicle color?:', vehicle['color']);
+console.log('vehicle is convertible?:', vehicle['isConvertible']);
 console.log('vehicle object:', vehicle);
 
 var pet = {
