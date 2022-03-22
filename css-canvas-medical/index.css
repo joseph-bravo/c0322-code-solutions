@@ -1,0 +1,20 @@
+/* header */
+
+/* hero image */
+
+.hero-image {
+  background: linear-gradient(rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)), url("images/hero.jpg");
+  background-size: cover;
+}
+
+.text-pad-right {
+  padding-right: 42%;
+}
+
+/* adopted clinics */
+
+/* get started */
+
+/* main footer */
+
+/* privacy */
