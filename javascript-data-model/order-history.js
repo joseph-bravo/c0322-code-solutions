@@ -130,3 +130,5 @@ var orderHistory = [
     hasProductSupport: true
   }
 ];
+
+console.log(orderHistory);
