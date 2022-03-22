@@ -13,6 +13,7 @@ var orderHistory = [
       day: 8,
       year: 2020
     },
+
     items: [
       {
         itemName: 'JavaScript for impatient programmers',
@@ -25,7 +26,7 @@ var orderHistory = [
         }
       }
     ],
-    itemsOrdered: this.items.length,
+
     hasProductSupport: false
   },
   {
@@ -42,6 +43,7 @@ var orderHistory = [
       day: 20,
       year: 2020
     },
+
     items: [
       {
         itemName: 'The Timeless Way of Building',
@@ -54,7 +56,7 @@ var orderHistory = [
         }
       }
     ],
-    itemsOrdered: this.items.length,
+
     hasProductSupport: false
   },
   {
@@ -71,6 +73,7 @@ var orderHistory = [
       day: 7,
       year: 2020
     },
+
     items: [
       {
         itemName: 'Controller Adapter. Super Smash Bros Switch Gamecube Adapter for WII U, PC Support Turbo and Vibration Features.No Driver and No Lag- Gamecube Adapter',
@@ -83,7 +86,7 @@ var orderHistory = [
         }
       }
     ],
-    itemsOrdered: this.items.length,
+
     hasProductSupport: false
   },
   {
@@ -100,6 +103,7 @@ var orderHistory = [
       day: 5,
       year: 2020
     },
+
     items: [
       {
         itemName: 'GameCube Controller - Super Smash Bros. Edition (Nintendo Switch)',
@@ -122,7 +126,7 @@ var orderHistory = [
         }
       }
     ],
-    itemsOrdered: this.items.length,
+
     hasProductSupport: true
   }
 ];
