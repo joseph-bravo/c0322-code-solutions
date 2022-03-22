@@ -40,6 +40,10 @@ h1 {
   font-size: 24pt;
 }
 
+h2 {
+  font-size: 20pt;
+}
+
 p {
   line-height: 1.5rem;
   font-size: 10pt;
@@ -211,4 +215,33 @@ button {
   font-size: 10pt;
   width: 90px;
   height: 35px;
+}
+
+/* specific */
+
+.homepage-bg {
+  background: linear-gradient(rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)), url("images/hero.jpg");
+  background-size: cover;
+}
+
+.product-bg {
+  background: linear-gradient(rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)), url("images/product/product-header.jpg");
+}
+
+.hero-image {
+  background-size: cover;
+  background-position: center;
+  height: 30rem;
+}
+
+.learn-more h2 {
+  margin-bottom: 0;
+}
+
+.learn-more p {
+  margin-top: 0.5rem;
+}
+
+.text-pad-right {
+  padding-right: 42%;
 }
