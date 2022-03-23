@@ -2,6 +2,11 @@
   font-family: "DM Sans", sans-serif;
 }
 
+p {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
 .container {
   width: 100vw;
 }
@@ -38,31 +43,38 @@
   flex-basis: calc(100% * ( 5 / 5 ));
 }
 
+.p-5 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.p-1 {
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
 .center-text {
   text-align: center;
 }
 
 .font-color-gray {
-  color: gray;
+  color: #d3d3d3;
+  text-decoration-color: #d3d3d3;
 }
 
-/*
-  !!! needs fixing
 .border-left {
-  display: inline-block;
-  border: 2px normal gray;
-} */
+  border-left: 1px solid #d3d3d3;
+  padding-left: 0.2em;
+}
 
 .price {
-  background-color: tan;
-  border-radius: 0.25rem;
-}
-
-del {
-  text-decoration-color: gray;
+  background-color: #fff2e7;
+  border-radius: 0.3rem;
+  padding: 0.05em 0.1em;
 }
 
 .product img {
   width: 100%;
-  object-fit: contain;
+  height: 20rem;
+  object-fit: cover;
 }
