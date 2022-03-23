@@ -1,0 +1,68 @@
+* {
+  font-family: "DM Sans", sans-serif;
+}
+
+.container {
+  width: 100vw;
+}
+
+.row {
+  display: flex;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5 {
+  margin: 0 auto;
+}
+
+.col-1 {
+  flex-basis: calc(100% * ( 1 / 5 ));
+}
+
+.col-2 {
+  flex-basis: calc(100% * ( 2 / 5 ));
+}
+
+.col-3 {
+  flex-basis: calc(100% * ( 3 / 5 ));
+}
+
+.col-4 {
+  flex-basis: calc(100% * ( 4 / 5 ));
+}
+
+.col-5 {
+  flex-basis: calc(100% * ( 5 / 5 ));
+}
+
+.center-text {
+  text-align: center;
+}
+
+.font-color-gray {
+  color: gray;
+}
+
+/*
+  !!! needs fixing
+.border-left {
+  display: inline-block;
+  border: 2px normal gray;
+} */
+
+.price {
+  background-color: tan;
+  border-radius: 0.25rem;
+}
+
+del {
+  text-decoration-color: gray;
+}
+
+.product img {
+  width: 100%;
+  object-fit: contain;
+}
