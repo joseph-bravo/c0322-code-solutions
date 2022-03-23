@@ -86,3 +86,17 @@
   padding-top: 5%;
   padding-bottom: 5%;
 }
+
+/* font colors */
+
+.fc-gray {
+  color: #6e6e6e;
+}
+
+.fc-lightgray {
+  color: #a0a0a0;
+}
+
+.fc-white {
+  color: white;
+}
