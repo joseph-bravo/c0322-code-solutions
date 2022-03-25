@@ -5,6 +5,8 @@ else, return string with split(' ')
 */
 
 function getWords(string) {
-  if (string === '') { return []; }
+  if (string === '') {
+    return [];
+  }
   return string.split(' ');
 }

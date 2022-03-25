@@ -7,6 +7,8 @@ for index in string provided, add output to end of index and assign to output
 
 function reverseWord(word) {
   var output = '';
-  for (var i = 0; i < word.length; i++) { output = word[i] + output; }
+  for (var i = 0; i < word.length; i++) {
+    output = word[i] + output;
+  }
   return output;
 }
