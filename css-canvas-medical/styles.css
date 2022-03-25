@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 /*  =========================
 
   row/c > background > alignment > padding > decor > semantic
@@ -27,12 +29,20 @@ button {
 }
 
 p {
-  line-height: 1.5rem;
+  line-height: 1.75rem;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 /* utility */
 
-.container {
+.container > * {
   width: 100vw;
 }
 
@@ -42,12 +52,18 @@ p {
   display: flex;
 }
 
+/* sizing */
+
 .h-100 {
   height: 100%;
 }
 
 .w-100 {
   width: 100%;
+}
+
+.w-max-1200px {
+  max-width: 75rem;
 }
 
 /* col */
@@ -117,12 +133,32 @@ p {
 
 /* padding horizontaL */
 
+.ph-33 {
+  padding-left: 33%;
+  padding-right: 33%;
+}
+
+.ph-7 {
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
 .ph-5 {
   padding-left: 5%;
   padding-right: 5%;
 }
 
 /* padding vertical */
+
+.pv-10 {
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.pv-7 {
+  padding-top: 7%;
+  padding-bottom: 7%;
+}
 
 .pv-5 {
   padding-top: 5%;
@@ -144,20 +180,19 @@ p {
   padding-bottom: 1%;
 }
 
+/* margin setting */
+
 /* text align */
 
-.t-center,
-.t-center * {
+.t-center {
   text-align: center;
 }
 
-.t-left,
-.t-left * {
+.t-left {
   text-align: left;
 }
 
-.t-right,
-.t-right * {
+.t-right {
   text-align: right;
 }
 
@@ -183,18 +218,15 @@ p {
 
 /* font colors */
 
-.fc-gray,
-.fc-gray * {
+.fc-gray {
   color: #6e6e6e;
 }
 
-.fc-lightgray,
-.fc-lightgray * {
+.fc-lightgray {
   color: #a0a0a0;
 }
 
-.fc-white,
-.fc-white * {
+.fc-white {
   color: white;
 }
 
@@ -218,6 +250,13 @@ p {
   border-top: 2px solid #e6e8eb96;
 }
 
+/* link decor */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* button */
 
 button {
@@ -228,13 +267,15 @@ button {
 }
 
 .b-get-started {
-  width: 150px;
-  height: 40px;
+  width: 12rem;
+  height: 3rem;
+  font-size: 1.25rem;
 }
 
 .b-contact-us {
-  width: 90px;
-  height: 35px;
+  width: 7rem;
+  height: 2.5rem;
+  font-size: medium;
 }
 
 /* hero image */
@@ -244,7 +285,7 @@ button {
   background-size: cover;
 }
 
-.w-limiter {
+.t-w-limiter {
   max-width: 32rem;
 }
 
@@ -255,4 +296,27 @@ button {
   display: block;
 }
 
-/* headings */
+/* nav bar stuff */
+
+.m-desc-left * {
+  margin-left: 3rem;
+}
+
+.m-desc-right * {
+  margin-right: 3rem;
+}
+
+/* footer formatting */
+.footer a {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+footer h3 {
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+footer .logo {
+  margin-bottom: 3rem;
+}
