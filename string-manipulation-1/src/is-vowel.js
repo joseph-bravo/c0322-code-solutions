@@ -7,7 +7,7 @@ return false at the end when for loop finishes without returning true
 
 function isVowel(character) {
   var vowels = ['A', 'E', 'I', 'O', 'U'];
-  for (var i in ['A', 'E', 'I', 'O', 'U']) {
+  for (var i = 0; i < vowels.length; i++) {
     if (character.toUpperCase() === vowels[i]) {
       return true;
     }
