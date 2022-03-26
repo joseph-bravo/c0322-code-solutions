@@ -21,15 +21,20 @@ h2 {
 
 h1,
 h2,
-h3,
 p,
 button {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 p {
   line-height: 1.75rem;
+  font-size: 1rem;
 }
 
 h1 {
@@ -68,7 +73,7 @@ h2 {
 
 /* col */
 
-.col-1,
+/* .col-1,
 .col-2,
 .col-3,
 .col-4,
@@ -81,7 +86,7 @@ h2 {
 .col-11,
 .col-12 {
   margin: 0 auto;
-}
+} */
 
 .col-1 {
   flex-basis: calc(100% * 1 / 12);
@@ -133,49 +138,49 @@ h2 {
 
 /* padding horizontaL */
 
-.ph-33 {
+.pad-horz-33 {
   padding-left: 33%;
   padding-right: 33%;
 }
 
-.ph-7 {
+.pad-horz-7 {
   padding-left: 7%;
   padding-right: 7%;
 }
 
-.ph-5 {
+.pad-horz-5 {
   padding-left: 5%;
   padding-right: 5%;
 }
 
 /* padding vertical */
 
-.pv-10 {
+.pad-vert-10 {
   padding-top: 10%;
   padding-bottom: 10%;
 }
 
-.pv-7 {
+.pad-vert-7 {
   padding-top: 7%;
   padding-bottom: 7%;
 }
 
-.pv-5 {
+.pad-vert-5 {
   padding-top: 5%;
   padding-bottom: 5%;
 }
 
-.pv-3 {
+.pad-vert-3 {
   padding-top: 3%;
   padding-bottom: 3%;
 }
 
-.pv-2 {
+.pad-vert-2 {
   padding-top: 2%;
   padding-bottom: 2%;
 }
 
-.pv-1 {
+.pad-vert-1 {
   padding-top: 1%;
   padding-bottom: 1%;
 }
@@ -184,49 +189,49 @@ h2 {
 
 /* text align */
 
-.t-center {
+.txt-center {
   text-align: center;
 }
 
-.t-left {
+.txt-left {
   text-align: left;
 }
 
-.t-right {
+.txt-right {
   text-align: right;
 }
 
 /* justify content */
 
-.j-center {
+.just-center {
   justify-content: center;
 }
 
-.j-left {
+.just-left {
   justify-content: left;
 }
 
-.j-right {
+.just-right {
   justify-content: right;
 }
 
 /* align content */
 
-.a-center {
+.align-center {
   align-items: center;
 }
 
 /* font colors */
 
-.fc-gray {
-  color: #6e6e6e;
+.txtcolor-gray {
+  color: #535353;
 }
 
-.fc-lightgray {
+.txtcolor-lightgray {
   color: #a0a0a0;
 }
 
-.fc-white {
+.txtcolor-white {
   color: white;
 }
 
@@ -266,13 +271,13 @@ button {
   border-radius: 5px;
 }
 
-.b-get-started {
+.btn-get-started {
   width: 12rem;
   height: 3rem;
   font-size: 1.25rem;
 }
 
-.b-contact-us {
+.btn-contact-us {
   width: 7rem;
   height: 2.5rem;
   font-size: medium;
@@ -285,7 +290,7 @@ button {
   background-size: cover;
 }
 
-.t-w-limiter {
+.txt-width-limiter {
   max-width: 32rem;
 }
 
@@ -298,11 +303,11 @@ button {
 
 /* nav bar stuff */
 
-.m-desc-left * {
+.margin-descendants-left * {
   margin-left: 3rem;
 }
 
-.m-desc-right * {
+.margin-descendants-right * {
   margin-right: 3rem;
 }
 
@@ -310,13 +315,19 @@ button {
 .footer a {
   display: block;
   margin-bottom: 1rem;
+  font-size: 1.25rem;
 }
 
 footer h3 {
   text-transform: uppercase;
   margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 footer .logo {
   margin-bottom: 3rem;
+}
+
+.privacy a {
+  font-size: 1rem;
 }
