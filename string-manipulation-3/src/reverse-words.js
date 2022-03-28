@@ -13,3 +13,13 @@ function reverseWord(word) {
   }
   return output;
 }
+
+function reverseWords(string) {
+  var output = '';
+  var workingString = string.split(' ');
+  for (var i = 0; i < workingString.length; i++) {
+    workingString[i] = reverseWord(workingString[i]);
+  }
+  output = workingString.join(' ');
+  return output;
+}
