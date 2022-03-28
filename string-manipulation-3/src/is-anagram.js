@@ -5,7 +5,10 @@ take string and slap all non-spaces into new array for both A and B
 turn both strings into array and remove spaces (A and B)
 for each letter in A string, check if it exists in B string.
   NEW FUNCTION: isStringInArray. default to false. set output to true if one string isn't in array
-  if it does, continue loop, if not, return false
+  is arrayB @ index anywhere in arrayA?
+  if it does, continue loop, remove from array A
+    using splice and indexOf searching for current letter in arrayA
+  if not, return false
     return true at end of loop
  */
 function toArrayAndRemoveCharacter(string, char) {
@@ -32,7 +35,9 @@ function isAnagram(firstString, secondString) {
   var arrayA = toArrayAndRemoveCharacter(firstString, ' ');
   var arrayB = toArrayAndRemoveCharacter(secondString, ' ');
   for (var i = 0; i < arrayB.length; i++) {
-    if (!isStringInArray(arrayA, arrayB[i])) {
+    if (isStringInArray(arrayA, arrayB[i])) {
+      arrayA.splice(arrayA.indexOf(arrayB[i]), 1);
+    } else {
       return false;
     }
   }
