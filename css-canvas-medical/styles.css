@@ -1,190 +1,248 @@
-/* fonts: avenir (normal), tiempos headline (normal + italic) */
+/* stylelint-disable no-descending-specificity */
+
+/*  =========================
+
+  row/c > background > alignment > padding > decor > semantic
+
+    =========================   */
+
+/* font */
+
+* {
+  font-family: Avenir, sans-serif;
+  font-weight: 500;
+  font-size: normal;
+}
 
 h1,
 h2 {
   font-family: "Tiempos Headline", serif;
 }
 
-/* margin resets */
-
 h1,
-p {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+h2,
+p,
+button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
-  margin-top: 0;
-}
-
-/* p {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-} */
-
-* {
-  font-family: Avenir, sans-serif;
-  font-weight: 500;
-}
-
-a {
-  text-decoration: none;
-  margin: 1em 0;
-}
-
-header a {
-  font-size: 10pt;
-}
-
-h1 {
-  font-size: 24pt;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 p {
-  line-height: 1.5rem;
-  font-size: 10pt;
+  line-height: 1.75rem;
+  font-size: 1rem;
 }
 
-address {
-  font-size: 11pt;
-  font-style: normal;
+h1 {
+  font-size: 2.5em;
 }
 
-.font-gray,
-.font-gray * {
-  color: #6e6e6e;
-}
-
-.font-lightgray,
-.font-lightgray * {
-  color: #a0a0a0;
-}
-
-.font-white,
-.font-white * {
-  color: white;
+h2 {
+  font-size: 2rem;
 }
 
 /* utility */
 
-.container {
+.container > * {
   width: 100vw;
 }
 
-.pad-sides {
-  padding-left: 7.5%;
-  padding-right: 7.5%;
-}
-
-.pad-sides-large {
-  padding-left: 27%;
-  padding-right: 27%;
-}
-
-.pad-vertical-10 {
-  padding-top: 10%;
-  padding-bottom: 10%;
-}
-
-.pad-vertical-5 {
-  padding-top: 5%;
-  padding-bottom: 5%;
-}
-
-.pad-vertical-3 {
-  padding-top: 3%;
-  padding-bottom: 3%;
-}
-
-.pad-vertical-2 {
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-
-.pad-vertical-1 {
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-
-.margin-left * {
-  margin-left: 2.5rem;
-}
-
-.margin-right-small * {
-  margin-right: 1rem;
-}
-
-.pad-right {
-  padding-right: 1.5rem;
-}
+/* row */
 
 .row {
   display: flex;
 }
 
-.col-25 {
-  flex-basis: 25%;
-  margin: 0 auto;
-}
+/* sizing */
 
-.col-50 {
-  flex-basis: 50%;
-  margin: 0 auto;
-}
-
-.col-75 {
-  flex-basis: 75%;
-  margin: 0 auto;
-}
-
-.col-100 {
-  flex-basis: 100%;
-  margin: 0 auto;
-}
-
-.justify-left {
-  justify-content: left;
-}
-
-.justify-right {
-  justify-content: right;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.row-v-center {
+.h-100 {
   height: 100%;
-  align-items: center;
 }
 
-.text-child-center > * {
+.w-100 {
+  width: 100%;
+}
+
+.w-max-1200px {
+  max-width: 75rem;
+}
+
+/* col */
+
+/* .col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  margin: 0 auto;
+} */
+
+.col-1 {
+  flex-basis: calc(100% * 1 / 12);
+}
+
+.col-2 {
+  flex-basis: calc(100% * 2 / 12);
+}
+
+.col-3 {
+  flex-basis: calc(100% * 3 / 12);
+}
+
+.col-4 {
+  flex-basis: calc(100% * 4 / 12);
+}
+
+.col-5 {
+  flex-basis: calc(100% * 5 / 12);
+}
+
+.col-6 {
+  flex-basis: calc(100% * 6 / 12);
+}
+
+.col-7 {
+  flex-basis: calc(100% * 7 / 12);
+}
+
+.col-8 {
+  flex-basis: calc(100% * 8 / 12);
+}
+
+.col-9 {
+  flex-basis: calc(100% * 9 / 12);
+}
+
+.col-10 {
+  flex-basis: calc(100% * 10 / 12);
+}
+
+.col-11 {
+  flex-basis: calc(100% * 11 / 12);
+}
+
+.col-12 {
+  flex-basis: calc(100% * 12 / 12);
+}
+
+/* padding horizontaL */
+
+.pad-horz-33 {
+  padding-left: 33%;
+  padding-right: 33%;
+}
+
+.pad-horz-7 {
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.pad-horz-5 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* padding vertical */
+
+.pad-vert-10 {
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.pad-vert-7 {
+  padding-top: 7%;
+  padding-bottom: 7%;
+}
+
+.pad-vert-5 {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.pad-vert-3 {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.pad-vert-2 {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.pad-vert-1 {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+/* margin setting */
+
+/* text align */
+
+.txt-center {
   text-align: center;
 }
 
-.descendant-blocks * {
-  display: block;
+.txt-left {
+  text-align: left;
 }
 
-.main-footer h3 {
-  text-transform: uppercase;
+.txt-right {
+  text-align: right;
 }
 
-.logo {
-  width: 8rem;
+/* justify content */
+
+.just-center {
+  justify-content: center;
 }
 
-/* coloring */
+.just-left {
+  justify-content: left;
+}
+
+.just-right {
+  justify-content: right;
+}
+
+/* align content */
+
+.align-center {
+  align-items: center;
+}
+
+/* font colors */
+
+.txtcolor-gray {
+  color: #535353;
+}
+
+.txtcolor-lightgray {
+  color: #a0a0a0;
+}
+
+.txtcolor-white {
+  color: white;
+}
+
+/* background colors */
 
 .bg-gray {
   background-color: #4e4f4e;
 }
 
 .bg-lightgray {
-  background-color: #fafafa;
-
-  /* background-color: lightcyan; */
+  background-color: #f5f5f5;
 }
 
 /* decor */
@@ -193,7 +251,19 @@ address {
   border-bottom: 2px solid #e6e8eb96;
 }
 
-/* universal target */
+.line-top {
+  border-top: 2px solid #e6e8eb96;
+}
+
+/* link decor */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* button */
+
 button {
   color: white;
   background-color: #294464;
@@ -201,19 +271,17 @@ button {
   border-radius: 5px;
 }
 
-.button-get-started {
-  font-size: 12pt;
-  width: 150px;
-  height: 40px;
+.btn-get-started {
+  width: 12rem;
+  height: 3rem;
+  font-size: 1.25rem;
 }
 
-.button-contact-us {
-  font-size: 10pt;
-  width: 90px;
-  height: 35px;
+.btn-contact-us {
+  width: 7rem;
+  height: 2.5rem;
+  font-size: medium;
 }
-
-/* header */
 
 /* hero image */
 
@@ -222,14 +290,44 @@ button {
   background-size: cover;
 }
 
-.text-pad-right {
-  padding-right: 42%;
+.txt-width-limiter {
+  max-width: 32rem;
 }
 
-/* adopted clinics */
+/* logo */
 
-/* get started */
+.logo {
+  width: 8rem;
+  display: block;
+}
 
-/* main footer */
+/* nav bar stuff */
 
-/* privacy */
+.margin-descendants-left * {
+  margin-left: 3rem;
+}
+
+.margin-descendants-right * {
+  margin-right: 3rem;
+}
+
+/* footer formatting */
+.footer a {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+footer h3 {
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+footer .logo {
+  margin-bottom: 3rem;
+}
+
+.privacy a {
+  font-size: 1rem;
+}
