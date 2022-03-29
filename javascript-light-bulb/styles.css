@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 99vw;
+  height: 98vh;
+}
+
+.switch {
+  margin: auto;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 100%;
+}
+
+.bg-light {
+  background-color: #fef9f1;
+}
+
+.bg-dark {
+  background-color: #111;
+}
+
+.switch-light {
+  background-color: #faea84;
+  box-shadow: 0 0 1rem #faea84;
+}
+
+.switch-dark {
+  background-color: #252525;
+}
+
+.switch:active {
+  transform: translateY(4px);
+}
