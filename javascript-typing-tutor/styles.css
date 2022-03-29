@@ -8,6 +8,22 @@
 
 h1 {
   font-size: 5rem;
+  margin-top: 7rem;
+}
+
+h2 {
+  font-size: 4rem;
+  margin-top: 4rem;
+}
+
+h3 {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+h4 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
 }
 
 .container {
@@ -19,16 +35,20 @@ h1 {
   display: flex;
 }
 
-.col-100 {
+.col-12 {
   flex-basis: 100%;
+}
+
+.col-4 {
+  flex-basis: calc(100% * (4 / 12));
 }
 
 .margin-auto {
   margin: auto;
 }
 
-.margintop-10rem {
-  margin-top: 20%;
+.margintop-10 {
+  margin-top: 10%;
 }
 
 .txt-center,
