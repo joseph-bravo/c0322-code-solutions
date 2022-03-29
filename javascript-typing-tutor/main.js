@@ -26,6 +26,8 @@ var hitCount = 0;
 
 function reset() {
   currentLetter = 0;
+  missCount = 0;
+  hitCount = 0;
   $completionText.className = 'row completion-text hidden';
   while ($letterNodes.length > 0) {
     $letterNodes[0].remove();
