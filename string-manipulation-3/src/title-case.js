@@ -1,78 +1,106 @@
+/* eslint-disable no-redeclare */
 /* exported titleCase */
 
 /*
   new function: capitalize word
     from string-manipulation-2
 
-  new function: is keyword
-    var keywords containing object with keyword property with value of property capitalization
+  new function named titleCase(title)
+  title into lowercase, assign to new var titleLowerCase
+  titleLowerCase split by ': ', assign to new var titleParts
+  for each x in titleParts, split by ' ', reassign to index
 
-  new function: titleCaseWord, including ones separated by hyphens, args (word, index)
-  check if keyword, assign to proper string capitalization if true
-    set output to proper capitalization
-  else if word length >= 4 || index !== 0
-    check string has hyphen
-      if:
-          split by hyphen
-          capitalize each with for loop
-          join with hyphen
-    else capitalize normally
-  return output string
+  i.e. javascript: the definitive guide
+  we now have titleParts = [ ['javascript'], ['the', 'definitive', 'guide'] ]
 
-  TITLE CASE FUNCTION
+  titleParts = [ [word, word] , [word, word, word] ]
+  titleParts = [titlepart, titlepart]
 
-  lowercase all of string
-  split words by space into new array
-  for each splitword, run titleCaseWorld, pass word and index, assign to current index
-  join with spaces
+  for each word in title part in titleParts, titleCase check...
+    keyword? >>>
+      ----
+      for each keyword in keywords object, check if keyword === word
+      (split into function to allow for loop flow via if statement)
+        y: assign value of property to index
+        n: pass
+      ---
 
+    hyphen?
+      y: split by hyphen into array, capitalize both indexes, join with hyphen seperator
+      n: pass
+
+    first word?
+      y: capitalize normally
+      n: pass
+
+    check if >= 4
+      y: capitalize normally
+      n: check if minor word >>>
+        minor word? >>>
+        -----
+          for each minorWord in minor words array, check if minorWord === word
+        -----
+          y: capitalize normally
+          n: return lowercase
+
+  for each x in title part, rejoin with space seperator
+  for each title part in titleParts, rejoin with ': ' seperator
+  return output
 */
 
-function capitalizeWord(word) {
+function capitalizeWordStandard(word) {
   var splitOutput = (word.toLowerCase()).split('');
   splitOutput[0] = splitOutput[0].toUpperCase();
   var output = splitOutput.join('');
   return output;
 }
 
-var keywords = { javascript: 'JavaScript', api: 'API' };
+var keyWords = { javascript: 'JavaScript', api: 'API', i: 'I' };
 
 function isKeyWord(word) {
-  for (var i in keywords) {
-    if (word.toLowerCase() === i) {
+  for (var keyWord in keyWords) {
+    if (keyWord === word) {
       return true;
     }
   }
   return false;
 }
 
-function titleCaseWord(word, index) {
-  if (isKeyWord(word)) {
-    for (var i in keywords) {
-      if (word.toLowerCase() === i) {
-        return keywords[i];
-      }
+var minorWords = ['and', 'or', 'not', 'but', 'a', 'an', 'the', 'as', 'at', 'by', 'for', 'in', 'of', 'on', 'per', 'to'];
+
+function isMinorWord(word) {
+  for (var minorWord = 0; minorWord < minorWords.length; minorWord++) {
+    if (word === minorWords[minorWord]) {
+      return true;
     }
-  } else if (word.length >= 4 || index !== 0) {
-    if (word.includes('-')) {
-      var splitString = word.split('-');
-      for (var i = 0; i < splitString.length; i++) {
-        splitString[i] = capitalizeWord(splitString[i]);
-      }
-      return splitString.join('-');
-    } else {
-      return capitalizeWord(word);
-    }
-  } else {
-    return word.toLowerCase();
   }
+  return false;
 }
 
 function titleCase(title) {
   var titleLowerCase = title.toLowerCase();
-  var titleSplit = titleLowerCase.split(' ');
-  for (var i = 0; i < titleSplit.length; i++) {
-    titleSplit[i] = titleCaseWord(titleSplit[i], i);
+  var titleParts = titleLowerCase.split(': ');
+  for (var i = 0; i < titleParts.length; i++) {
+    var workingTitle = titleParts[i].split(' ');
+    for (var word = 0; word < workingTitle.length; word++) {
+      // keyword?
+      if (isKeyWord(workingTitle[word])) {
+        workingTitle[word] = keyWords[workingTitle[word]];
+      } else if (workingTitle[word].includes('-')) {
+        var hyphenWordArray = workingTitle[word].split('-');
+        for (var hyphenWord = 0; hyphenWord < hyphenWordArray.length; hyphenWord++) {
+          hyphenWordArray[hyphenWord] = capitalizeWordStandard(hyphenWordArray[hyphenWord]);
+        }
+        workingTitle[word] = hyphenWordArray.join('-');
+      } else if (word === 0) {
+        workingTitle[word] = capitalizeWordStandard(workingTitle[word]);
+      } else if (workingTitle[word].length > 3) {
+        workingTitle[word] = capitalizeWordStandard(workingTitle[word]);
+      } else if (!isMinorWord(workingTitle[word])) {
+        workingTitle[word] = capitalizeWordStandard(workingTitle[word]);
+      }
+      titleParts[i] = workingTitle.join(' ');
+    }
   }
-  return titleSplit.join(' ');
+  return titleParts.join(': ');
 }
