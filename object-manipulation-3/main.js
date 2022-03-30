@@ -10,6 +10,19 @@ _.forEach(suits, function (suitArg) {
   });
 });
 
-function initializePlayers(numberOfPlayers) {
-
+function initializeGame(numberOfPlayers, handSize) {
+  var gameDeck = _.shuffle(initDeck);
+  var players = [];
+  for (var i = 1; i <= numberOfPlayers; i++) {
+    players.push = {
+      name: 'player' + i,
+      hand: 5
+    };
+    console.log('initialized players:', players);
+  }
+}
+function drawCard(count, deck) {
+  var output = _.take(deck, count);
+  deck = _.drop(deck, count);
+  return output;
 }
