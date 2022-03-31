@@ -41,16 +41,16 @@ _.forEach(suits, function (suitArg) {
 });
 
 /*
-new function: drawCards (parameters: player to draw, cards to draw, deck to draw from)
+[x]new function: drawCards (parameters: player to draw, cards to draw, deck to draw from)
   splice method to remove from given index
     start: 0
     end: cardCount
-  add return of splice to player's hand property
+  for each card in return array, push into player's hand property array
 
-new function: shuffleDeck (parameter: deck to shuffle)
-  _.shuffle lodash method, pass arg deck, assign return to deck to shuffle
+[x]new function: shuffleDeck (parameter: deck to shuffle)
+  _.shuffle lodash method, pass arg deck, return the return
 
-new function: initialize players (parameter: number of players)
+[X]new function: initialize players (parameter: number of players)
   array to return
   for each count in number of players
     create new object
@@ -58,24 +58,25 @@ new function: initialize players (parameter: number of players)
       hand: []
       score: 0
     push object to array
+  return array
 
-new function: check hand score (parameter: player)
+[x]new function: update hand score (parameter: player)
   number for output
   for each item in player's hand
     add value of card to output
   player.score = output
 
-new function: compare score function (playerlist, potential array)
-  for each player in array of players
-    for each potential in highest players
-      check if player.score > potential
-        y: remove potential and push player to potential
-        n: pass
-        else if player.score === potential
-          y: push player to potential
-          n: pass
+[x] new function: compare score (playerlist)
+  _.orderBy Lodash function, sort by score value of player in descending order
 
-new function: startGame (number of players, handsize)
+[x] new function: check for ties (playerlist sorted)
+  highest = player1.score
+  var tieCount
+  for each player in sorted player list (in order)
+    use _.takeWhile player.score = highest, assign to tiecount
+  return length of tiecount
+
+[]new function: startGame (number of players, handsize)
   shuffle initDeck with Lodash method _.shuffle, assign to new var for game's playing deck
   new array players = return of initialize players (number of players)
 
@@ -84,17 +85,116 @@ new function: startGame (number of players, handsize)
 
   for each player in array of players
     drawCards(), provide current player, handsize, gameDeck
-    checkHandScore(), player
 
-  highest players = [x]
+  compareScore(playerList) to sort descending player score
 
-  compare score function()
-
-  while highest players.length > 1
-    for each highestplayer
-      drawCard function, pass highest player, 1, gamedeck
-      checkhandscore(), highest player
-      compare score function
-  after while loop (highet player is only 1), log the winner
-
+  get return of checkForTies(playerList) which is already sorted = tiedCount
+    if tiedCount > 1
+      var tieBreakerPlayers array, slice to count of tiedCount
+    while tieBreakerPlayers array.length > 1 && gamedeck > 0
+      for each player in tiebreakerplayers array
+        draw() 1 card from gamedeck
+        compare scores() of tiebreakerplayers, return to tiedCount
+        tieBreakerPlayers array slice to count of tiedCount
 */
+
+function initializePlayers(count) {
+  var output = [];
+  for (var i = 1; i <= count; i++) {
+    var player = {
+      name: 'player' + i.toString(),
+      hand: [],
+      score: 0
+    };
+    output.push(player);
+  }
+  console.log('initialized ' + count.toString() + ' players...');
+  return output;
+}
+
+function drawCards(player, count, deck) {
+  console.log('----- CARD DRAW -----');
+  var cards = deck.splice(0, count);
+  _.forEach(cards, function (value, index) {
+    player.hand.push(cards[index]);
+  });
+  console.log(player.name + ' draws ' + cards.length + ' cards from the deck!');
+  updateHandScore(player);
+}
+
+function updateHandScore(player) {
+  var output = 0;
+  _.forEach(player.hand, function (card) {
+    output += card.value;
+  });
+  player.score = output;
+  console.log(player.name + '\'s score is ' + player.score);
+}
+
+function compareScores(players) {
+  console.log('----- SORTING -----');
+  var sorted = _.orderBy(players, ['score'], ['desc']);
+  console.log(sorted);
+  return sorted;
+}
+
+function shuffleDeck(deck) {
+  return _.shuffle(deck);
+}
+
+function checkForTies(players) {
+  var highest = players[0].score;
+  var tieCount = 0;
+  for (var i = 0; i < players.length; i++) {
+    if (players[i].score === highest) {
+      tieCount++;
+    }
+  }
+  console.log('Potential Winners:', tieCount);
+  return tieCount;
+}
+
+// ------------------------------------------------
+// ------------------------------------------------
+// ------------------------------------------------
+
+function runGame(playerCount, handSize) {
+  console.log('starting game!!!');
+
+  var playerList = initializePlayers(playerCount);
+  var gameDeck = shuffleDeck(initDeck);
+
+  console.log('player list:', playerList);
+  console.log('game deck:', gameDeck);
+
+  _.forEach(playerList, function (player) {
+    drawCards(player, handSize, gameDeck);
+  });
+
+  playerList = compareScores(playerList);
+
+  // tie breaker checking
+  var tiedCount = checkForTies(playerList);
+  var tieBreakerPlayers = playerList.slice(0, tiedCount);
+  console.log('tie breakers', tieBreakerPlayers);
+  if (tiedCount > 1) {
+    console.log('----- TIE -----');
+    while (tiedCount > 1 && gameDeck.length > tiedCount) {
+      if (gameDeck.length > 0) {
+        _.forEach(tieBreakerPlayers, function (player) {
+          console.log('tied!', player);
+          drawCards(player, 1, gameDeck);
+        });
+        compareScores(tieBreakerPlayers);
+        tiedCount = checkForTies(tieBreakerPlayers);
+      } else {
+        console.log('we\'re out of cards!');
+      }
+    }
+  }
+  var winner = tieBreakerPlayers[0];
+  console.log('the winner is:', winner.name);
+
+}
+
+runGame(4, 5);
