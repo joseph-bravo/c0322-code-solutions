@@ -115,6 +115,10 @@ function initializePlayers(count) {
 function drawCards(player, count, deck) {
   console.log('----- CARD DRAW -----');
   var cards = deck.splice(0, count);
+  if (deck.length < count) {
+    console.log('not enough cards... reshuffling deck!');
+    deck = shuffleDeck(initDeck);
+  }
   _.forEach(cards, function (value, index) {
     player.hand.push(cards[index]);
   });
@@ -139,7 +143,9 @@ function compareScores(players) {
 }
 
 function shuffleDeck(deck) {
-  return _.shuffle(deck);
+  var shuffled = _.shuffle(deck);
+  console.log('shuffled deck:', shuffled);
+  return shuffled;
 }
 
 function checkForTies(players) {
@@ -165,36 +171,12 @@ function runGame(playerCount, handSize) {
   var gameDeck = shuffleDeck(initDeck);
 
   console.log('player list:', playerList);
-  console.log('game deck:', gameDeck);
 
   _.forEach(playerList, function (player) {
     drawCards(player, handSize, gameDeck);
   });
 
   playerList = compareScores(playerList);
-
-  // tie breaker checking
-  var tiedCount = checkForTies(playerList);
-  var tieBreakerPlayers = playerList.slice(0, tiedCount);
-  console.log('tie breakers', tieBreakerPlayers);
-  if (tiedCount > 1) {
-    console.log('----- TIE -----');
-    while (tiedCount > 1 && gameDeck.length > tiedCount) {
-      if (gameDeck.length > 0) {
-        _.forEach(tieBreakerPlayers, function (player) {
-          console.log('tied!', player);
-          drawCards(player, 1, gameDeck);
-        });
-        compareScores(tieBreakerPlayers);
-        tiedCount = checkForTies(tieBreakerPlayers);
-      } else {
-        console.log('we\'re out of cards!');
-      }
-    }
-  }
-  var winner = tieBreakerPlayers[0];
-  console.log('the winner is:', winner.name);
-
 }
 
-runGame(4, 5);
+runGame(4, 20);
