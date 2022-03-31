@@ -1,6 +1,19 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
 /*
+
+  ! GAME LOOP
+
+  each player draws a set amount of cards from a deck
+  whoever has the highest score wins
+  if tied, tied players draw one card until there's a winner
+    each player will be put into array based on ranking
+    if 2 or more players exist in first index (first place)
+      tie breaker occurs within first index
+
+*/
+
+/*
   ! create initial deck
     empty array to store objects
     create list of ranks
@@ -39,14 +52,211 @@ _.forEach(suits, function (suitArg) {
     initDeck.push(cardBuild);
   });
 });
+/*
+  TODO:
+
+  ! Shuffle Deck
+
+  * param : deck to shuffle from
+  * return : new shuffled deck
+  take deck parameter, pass as argument to _.shuffle [Lodash] method
+  return the return of the shuffle method
+
+*/
+
+function shuffleDeck(sourceDeck) {
+  return _.shuffle(sourceDeck);
+}
+
+/*
+  TODO:
+
+  ! Draw Card function.
+
+  * param : player to draw, count of cards to draw, deck to draw from
+  * return : n/a
+  for each count in parameter
+    check if there are any cards left
+      y: splice one card and push to player.hand
+      n: reshuffle deck
+*/
+
+function drawCard(player, drawCount, sourceDeck) {
+  var gameDeck = sourceDeck[0];
+  // eslint-disable-next-line no-undef
+  console.log(player.name, 'is drawing', drawCount, 'from', gameDeck);
+
+  for (var draws = 0; draws < drawCount; draws++) {
+    console.log('drawing card!');
+    console.log(gameDeck);
+
+    if (gameDeck.length < 1) {
+      console.log('Not enough cards. Shuffling deck...');
+      gameDeck = shuffleDeck(initDeck);
+      console.log(gameDeck);
+    }
+    var drawnCard = (gameDeck.splice(0, 1))[0]; // this line is dumb stupid meanie
+    player.hand.push(drawnCard);
+
+    console.log(player.name + ' drew ' + drawnCard + '. cards left: ' + gameDeck.length);
+    console.log(gameDeck);
+  }
+
+}
 
 /*
 
-  TODO: Draw Card function.
-  * parameters: player to draw, count of cards to draw, deck to draw from
-  for each count in parameter
-    check if there are any cards left
-      y: splice one card and append to player.hand
-      n: reshuffle deck
+  TODO:
+
+  ! Initialize Players
+
+  * param: number of players to initialize
+  * return: array of players
+  for each count in number of players
+    create new object
+      name: 'player' + current count
+      hand: []
+      score: 0
+    push object to array
+  return array
 
 */
+
+function initializePlayers(playerCount) {
+  var output = [];
+
+  for (var p = 1; p <= playerCount; p++) {
+    var objPlayer = {
+      name: 'player' + p,
+      hand: [],
+      score: 0
+    };
+    output.push(objPlayer);
+  }
+
+  return output;
+}
+
+/*
+
+  TODO
+
+  ! Update Hand Score
+
+  * param: player list
+  * output: n/a
+
+  for each player in the player list argument
+    create new var output = 0
+    get hand property of player object
+    for each card in hand
+      add value of card to output
+    assign player.score to ouput
+
+ */
+
+function updateHandScore(playerList) {
+  for (var i = 0; i < playerList.length; i++) {
+    var totalScore = 0;
+    for (var c = 0; c < playerList[i].hand.length; c++) {
+      totalScore += playerList[i].hand[c].value;
+    }
+    playerList[i].score = totalScore;
+  }
+}
+
+/*
+
+  TODO
+
+  ! Get Rankings
+
+  * param: player list
+  * return: none
+
+  playerList = [
+    {playerA score: 40},
+    {playerB score: 30},
+    {playerC score: 40}
+  ]
+
+  create output array
+  while there's still players in player list
+    create empty array tempA
+    find the highest player.score value using _.maxBy (Lodash)
+      1st argument: playerlist
+      2nd argument: shorthand for _.property, getting property 'score' of each index
+    for each player in player list
+      check if player's score = highest score
+        y: splice and push into tempA
+        n: pass
+    push temp into sorted array
+
+    output = [
+      [
+       {playerA score: 40},
+      {playerC score: 30}
+      ]
+    ]
+    playerList = [
+      {playerB score: 40}
+    ]
+
+    call function
+
+    output = [
+      [
+       {playerA score: 40},
+      {playerC score: 30}
+      ], [
+      {playerB score: 40}
+      ]
+    ]
+
+    playerList = []
+
+  after while loop (no more players in player list) >
+  > assign value of output array to player list
+
+*/
+
+function playerRankArrayByScore(playerList) {
+  var sortedArray = [];
+  while (playerList.length > 0) {
+    var tempArray = [];
+    var highestScore = _.maxBy(playerList, 'score');
+    for (var i = 0; i < playerList.length; i++) {
+      if (playerList[i].score === highestScore.score) {
+        var playerWithHighScore = playerList.splice(i, 1)[0]; // this too
+        tempArray.push(playerWithHighScore);
+      }
+    }
+    sortedArray.push(tempArray);
+  }
+  return sortedArray;
+}
+
+// ! GAME LOOP TIME BABY
+
+function runGame(playerCount, startingHand) {
+  var playerList = initializePlayers(playerCount);
+  var gameDeck = [];
+  gameDeck.push(shuffleDeck(initDeck));
+
+  _.forEach(playerList, function (player) {
+    drawCard(player, startingHand, gameDeck);
+  });
+  updateHandScore(playerList);
+  playerList = playerRankArrayByScore(playerList);
+
+  while (playerList[0].length > 1) {
+    debugger;
+    _.forEach(playerList[0], function (player) {
+      drawCard(player, startingHand, gameDeck);
+    });
+    updateHandScore(playerList[0]);
+    playerList = playerRankArrayByScore(playerList[0]);
+  }
+  console.log('winner is', playerList[0][0]);
+  console.log(playerList);
+}
