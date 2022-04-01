@@ -1,7 +1,6 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
-
+//! ------------------------------------------------------------
 /*
-
   ! GAME LOOP
 
   each player draws a set amount of cards from a deck
@@ -10,9 +9,8 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
     each player will be put into array based on ranking
     if 2 or more players exist in first index (first place)
       tie breaker occurs within first index
-
 */
-
+//! ------------------------------------------------------------
 /*
   ! create initial deck
     empty array to store objects
@@ -52,25 +50,25 @@ _.forEach(suits, function (suitArg) {
     initDeck.push(cardBuild);
   });
 });
+
 /*
-  TODO:
+  ! Shuffle Source Into Target
 
-  ! Shuffle Deck
-
-  * param : deck to shuffle from
-  * return : new shuffled deck
+  * param : array to shuffle to, deck to shuffle from
+  * return : n/a
   take deck parameter, pass as argument to _.shuffle [Lodash] method
   return the return of the shuffle method
 
 */
 
-function shuffleDeck(sourceDeck) {
-  return _.shuffle(sourceDeck);
+function shuffleSourceIntoTarget(target, source) {
+  var sourceShuffled = _.shuffle(source);
+  _.forEach(sourceShuffled, function (sourceValue) {
+    target.push(sourceValue);
+  });
 }
 
 /*
-  TODO:
-
   ! Draw Card function.
 
   * param : player to draw, count of cards to draw, deck to draw from
@@ -82,24 +80,18 @@ function shuffleDeck(sourceDeck) {
 */
 
 function drawCard(player, drawCount, sourceDeck) {
-  var gameDeck = sourceDeck[0];
   // eslint-disable-next-line no-undef
-  console.log(player.name, 'is drawing', drawCount, 'from', gameDeck);
+  console.log(player.name, 'is drawing', drawCount, 'from the deck. cards left:', sourceDeck.length);
 
   for (var draws = 0; draws < drawCount; draws++) {
-    console.log('drawing card!');
-    console.log(gameDeck);
-
-    if (gameDeck.length < 1) {
+    if (sourceDeck.length < 1) {
       console.log('Not enough cards. Shuffling deck...');
-      gameDeck = shuffleDeck(initDeck);
-      console.log(gameDeck);
+      shuffleSourceIntoTarget(sourceDeck, initDeck);
     }
-    var drawnCard = (gameDeck.splice(0, 1))[0]; // this line is dumb stupid meanie
+    var drawnCard = (sourceDeck.splice(0, 1))[0]; // this line is dumb stupid meanie
     player.hand.push(drawnCard);
 
-    console.log(player.name + ' drew ' + drawnCard + '. cards left: ' + gameDeck.length);
-    console.log(gameDeck);
+    console.log(player.name, 'drew', drawnCard, 'draws left:', drawCount - 1 - draws, 'cards left:', sourceDeck.length);
   }
 
 }
@@ -156,13 +148,18 @@ function initializePlayers(playerCount) {
  */
 
 function updateHandScore(playerList) {
+  console.log('----- SCORE CHECK -----');
   for (var i = 0; i < playerList.length; i++) {
     var totalScore = 0;
     for (var c = 0; c < playerList[i].hand.length; c++) {
       totalScore += playerList[i].hand[c].value;
     }
     playerList[i].score = totalScore;
+
+    console.log(playerList[i].name + ' has ' + playerList[i].score + ' points!');
+
   }
+  console.log('----------------------');
 }
 
 /*
@@ -233,30 +230,33 @@ function playerRankArrayByScore(playerList) {
     }
     sortedArray.push(tempArray);
   }
-  return sortedArray;
+  _.forEach(sortedArray, function (value) {
+    playerList.push(value);
+  });
 }
 
-// ! GAME LOOP TIME BABY
+// ! GAME LOOP HERE
 
 function runGame(playerCount, startingHand) {
   var playerList = initializePlayers(playerCount);
   var gameDeck = [];
-  gameDeck.push(shuffleDeck(initDeck));
+  shuffleSourceIntoTarget(gameDeck, initDeck);
 
   _.forEach(playerList, function (player) {
     drawCard(player, startingHand, gameDeck);
   });
   updateHandScore(playerList);
-  playerList = playerRankArrayByScore(playerList);
+  playerRankArrayByScore(playerList);
 
-  while (playerList[0].length > 1) {
-    debugger;
-    _.forEach(playerList[0], function (player) {
-      drawCard(player, startingHand, gameDeck);
-    });
-    updateHandScore(playerList[0]);
-    playerList = playerRankArrayByScore(playerList[0]);
+  if (playerList[0].length > 1) {
+    console.log('=== TIE!!! First place holders are:', playerList[0], '===');
+  } else {
+    console.log('=== Winner is ' + playerList[0][0].name + '! ===');
   }
-  console.log('winner is', playerList[0][0]);
-  console.log(playerList);
+  console.log('players in array based on ranking:', playerList);
+  console.log('flattened rankings array:', playerList.flat());
 }
+
+// ! initial loop...
+
+runGame(4, 5);
