@@ -1,0 +1,62 @@
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.column-full {
+  width: 100%;
+}
+
+.block {
+  display: block;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-bottom {
+  align-content: flex-end;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.pad-top-5rem {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.margin-vert-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.self-align-bottom {
+  align-self: bottom;
+}
+
+.self-align-center {
+  align-self: center;
+}
