@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Carousel</title>
+
+  <!-- styling -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- scripts  -->
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-center pad-top-5rem">
+      <div class="carousel">
+        <div class="overlay row justify-space-between full-height align-items-center">
+          <div class="button-container">
+            <button class="nav left">
+              <i class="fa fa-chevron-left"></i>
+            </button>
+          </div>
+          <div class="button-container">
+            <button class="nav right">
+              <i class="fa fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <img src="images/001.png">
+        <div class="row justify-center progress">
+          <button data-img-id="0"><i class="fas fa-circle"></i></button>
+          <button data-img-id="1"><i class="far fa-circle"></i></button>
+          <button data-img-id="2"><i class="far fa-circle"></i></button>
+          <button data-img-id="3"><i class="far fa-circle"></i></button>
+          <button data-img-id="4"><i class="far fa-circle"></i></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
