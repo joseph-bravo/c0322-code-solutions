@@ -1,0 +1,327 @@
+    1  git branch
+    2  git fetch
+    3  git branch
+    4  git ls
+    5  ls
+    6  ls help
+    7  help
+    8  help ls
+    9  info ls
+   10  help help
+   11  ls --all
+   12  ls
+   13  cd .
+   14  cd ls
+   15  cd .git
+   16  ls --all
+   17  cd ..
+   18  git fetch --all
+   19  git branch
+   20  git fetch origin
+   21  git remote
+   22  git fetch origin test-branch-pc
+   23  git branch
+   24  git status
+   25  ls
+   26  git fetch origin --all
+   27  git fetch --all
+   28  git branch --list
+   29  git branch --all
+   30  git pull
+   31  git pull test-branch-pc
+   32  git pull origin test-branch-pc
+   33  git branch
+   34  git switch test-branch-pc
+   35  git branch
+   36  git branch --all
+   37  git switch origin test-branch-pc
+   38  git branch --list
+   39  git checkout test-branch-pc
+   40  git checkout origin  test-branch-pc
+   41  git checkout origin test-branch-pc
+   42  git
+   43  git branch test-branch-pc
+   44  git switch test-branch-pc
+   45  git pull
+   46  git switch main
+   47  git checkout test-branch-pc
+   48  git switch main
+   49  git branch -D test-branch-pc
+   50  git checkout test-branch-pc
+   51  git statujs
+   52  git status
+   53  git reset
+   54  git reset --hard HEAD^
+   55  git status
+   56  clear
+   57  git status
+   58  git checkout test-branch-pc
+   59  git checkout origin test-branch-pc
+   60  git fetch
+   61  git fetch origin
+   62  git branch
+   63  git 
+   64  git switch test-branch-pc
+   65  git fetch test-branch-pc
+   66  git fetch origin test-branch-pc
+   67  git status
+   68  git branch
+   69  git switch test-branch-pc
+   70  git switch origin test-branch-pc
+   71  git fetch
+   72  git status
+   73  git log
+   74  GIT HELP -A
+   75  git help -a
+   76  clear
+   77  git fetch origin test-branch-pc
+   78  git branch --list
+   79  git branch --all
+   80  git switch FETCH_HEAD
+   81  git branch
+   82  git status
+   83  git branch --list
+   84  cd "/workspaces/c0322-code-solutions"
+   85  git branch --delete css-canvas-medical-product
+   86  git remote
+   87  git remote -v
+   88  git remote
+   89  git remote show
+   90  git remote show origin
+   91  git switch origin/test-branch-pc
+   92  git switch origin test-branch-pc
+   93  git fetch --all
+   94  git switch origin/test-branch-pc
+   95  git fetch origin test-branch-pc
+   96  git switch origin/test-branch-pc
+   97  git branch --list
+   98  git remote show origin
+   99  git pull
+  100  git pull origin main
+  101  git branch javascript-custom-methods
+  102  git switch javascript-custom-methods
+  103  clear
+  104  git status
+  105  git add javascript-custom-methods
+  106  git status
+  107  git commit -m "completed: javascript-custom-methods"
+  108  git push origin javascript-custom-methods
+  109  git switch main
+  110  git pull origin main
+  111  git branch javascript-this
+  112  git switch javascript-this
+  113  git status
+  114  git add javascript-this
+  115  git commit -m "
+  116  completed: javascript-this"
+  117  git push origin javascript-this
+  118  git switch main
+  119  git pull
+  120  git pull
+  121  git branch javascript-prototypes
+  122  git switch javascript-prototypes
+  123  git status
+  124  git add javascript-prototypes
+  125  git commit -m "completed: javascript-prototypes"
+  126  git push origin javascript-prototypes
+  127  git switch main
+  128  git pull
+  129  git branch javascript-timers
+  130  git switch javascript-timers
+  131  clear
+  132  git status
+  133  'git add javascript-timers
+  134  git add javascript-timers
+  135  git commit -m "completed: javascript-timers"
+  136  git push origin javascript-timers
+  137  git switch main
+  138  git pull
+  139  git branch javascript-carousel
+  140  git switch javascript-carousel
+  141  git status
+  142  git add javascript-carousel
+  143  git commit -m "completed: javascript-carousel"
+  144  git push origin javascript-carousel
+  145  git status
+  146  git add .
+  147  git commit -m "had to switch to img because the gif was too costly on gif size"
+  148  git push origin javascript-carousel
+  149  http
+  150  git branch http-messages
+  151  git switch http-messages
+  152  http
+  153  http https://example.com
+  154  http --verbose https://example.com 
+  155  http --body GET https://jsonplaceholder.typicode.com/users > http-messages/users.json
+  156  http --body GET https://jsonplaceholder.typicode.com/users
+  157  http --body GET https://example.com > http-messages/index.html
+  158  git status
+  159  git add http-messages
+  160  git commit -m "completed: http-messages"
+  161  git push origin http-messages
+  162  git switch main
+  163  git pull
+  164  git status
+  165  git branch javascript-ajax
+  166  git switch javascript-ajax
+  167  git status
+  168  git add javascript-ajax
+  169  git commit -m "completed javascript-ajax"
+  170  git push origin javascript-ajax
+  171  git switch main
+  172  git pull
+  173  http
+  174  http https://db.ygoprodeck.com/api/v7/archetypes.php
+  175  http GET https://db.ygoprodeck.com/api/v7/cardinfo.php
+  176  clear
+  177  http GET https://db.ygoprodeck.com/api/v7/randomcard.php
+  178  clear
+  179  http GET https://db.ygoprodeck.com/api/v7/cardinfo.php archetype=="Melffy"
+  180  http GET https://db.ygoprodeck.com/api/v7/cardinfo.php archetype="Melffy" 
+  181  http GET https://db.ygoprodeck.com/api/v7/cardinfo.php archetype=="Melffy"
+  182  http GET https://api.adviceslip.com/advice
+  183  http GET https://api.datamuse.com/words ml=="rod"
+  184  git 
+  185  git branch es6-const-let
+  186  git switch es6-const-let
+  187  git status
+  188  git status
+  189  git add .
+  190  git status
+  191  git commit -m "completed: es6-const-let"
+  192  git push origin es6-const-let
+  193  git switch main
+  194  git switch main
+  195  git pull origin main
+  196  git branch es6-arrow-functions
+  197  git switch es6-arrow-functions
+  198  git status
+  199  git add .
+  200  git commit -m "completed: es6-arrow-functions"
+  201  git push es6-arrow-functions
+  202  git push origin es6-arrow-functions
+  203  git switch main
+  204  clear
+  205  man
+  206  man man
+  207  wls
+  208  ls
+  209  ls
+  210  cd
+  211  ls
+  212  cd workspaces
+  213  cd /workspaces
+  214  ls
+  215  cd c0322-code-solutions
+  216  clear
+  217  git branch command-line-basics
+  218  git switch command-line-basics
+  219  cd command-line-basics
+  220  man man
+  221  man cat
+  222  ls
+  223  cd laziness.txt
+  224  cat  laziness.txt
+  225  cat impatience.txt
+  226  cat hubris.txt
+  227  cat laziness.txt impatience.txt hubris.txt
+  228  cat laziness.txt impatience.txt hubris.txt > three-virtues.txt
+  229  ls
+  230  cat three-virtues.txt
+  231  man ls
+  232  ls
+  233  a
+  234  ls
+  235  ls -a
+  236  ls -F
+  237  ls -a -F
+  238  ls .
+  239  ls ..
+  240  man ls
+  241  ls -A
+  242  ls -a
+  243  ls lfz-staff
+  244  ls lfz-staff -a
+  245  ls lfz-staff -F
+  246  ls lfz-staff -F -a
+  247  ls lfz-staff -aF
+  248  ls -a
+  249  ls -aF
+  250  ls -aF lfz-staff
+  251  ls lfz-staff -aF
+  252  ls lfz-staff -aF > lfz-staff/contents.txt
+  253  cat lfz-staff/contents.txt
+  254  pwd
+  255  man pwd
+  256  pwd
+  257  pwd -L
+  258  man pwd
+  259  man pwd
+  260  pwd -P
+  261  pwd > i-was-here.txt
+  262  ls
+  263  cat i-was-here.txt
+  264  man echo
+  265  echo
+  266  echo bruh
+  267  echo Hello
+  268  echo 'Hello, World!'
+  269  echo 'Hello, World!' > hello.txt
+  270  ls
+  271  cat hello
+  272  cat
+  273  cat impatience.txt
+  274  cat hello.txt
+  275  man touch
+  276  touch tag-youre-it.txt
+  277  ls
+  278  touch snoot/boop.txt
+  279  ls
+  280  ls -F
+  281  ls snoot
+  282  man mkdir
+  283  mkdir parent
+  284  ls
+  285  ls -F
+  286  mkdir parent/child/grandchild
+  287  mkdir -p parent/child/grandchild
+  288  touch parent/child/grandchild/.gitkeep
+  289  ls parent/child/grandchild
+  290  ls parent/child/grandchild -a
+  291  cd
+  292  -a
+  293  ls
+  294  ls -a
+  295  cd /
+  296  ls
+  297  cd workspaces
+  298  ls
+  299  cd c0322-code-solutions
+  300  cd command-line-basic=s
+  301  cd command-line-basics
+  302  man mv
+  303  ls
+  304  mv pokiemans pokemon
+  305  ls
+  306  ls pokemon
+  307  man rm
+  308  cat lol.txt
+  309  rm lol.txt
+  310  ls
+  311  rm kill-me
+  312  ls kill-me
+  313  rm kill-me -r
+  314  ls
+  315  man cp
+  316  man cp
+  317  cat and-then
+  318  cat and-then.txt
+  319  cp and-then.txt
+  320  cp and-then.txt no-and-then.txt
+  321  ls no-and-then.txtg
+  322  ls no-and-then.txt
+  323  cat no-and-then.txt
+  324  cat and-then.txt no-and-then.txt
+  325  man history
+  326  history
+  327  history > command-history.txt
