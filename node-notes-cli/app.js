@@ -20,26 +20,31 @@ if (command === 'read') {
     saveData();
     console.log();
   } else {
-    console.log(`
-There is no entry with ID [${args[0]}].
-Available entry IDs are: ${ids.join(', ')}.
-`);
+    logIncorrectArgument();
   }
 } else if (command === 'update') {
   if (args.length > 2) {
     console.log('Error. Please provide your new entry as a single string');
   }
-  if (data.notes[args[0]]) {
+  if (ids.includes(args[0])) {
     data.notes[args[0]] = args[1];
     saveData();
+  } else {
+    logIncorrectArgument();
+  }
+} else {
+  console.log('Available Commands: read, add, delete, update');
+}
+
+function logIncorrectArgument() {
+  if (Number.isNaN(Number(args[0]))) {
+    console.log('Please provide the ID as your first argument.');
   } else {
     console.log(`
 There is no entry with ID [${args[0]}].
 Available entry IDs are: ${ids.join(', ')}.
 `);
   }
-} else {
-  console.log('Available Commands: read, add, delete, update');
 }
 
 function saveData() {
