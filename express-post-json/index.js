@@ -16,8 +16,11 @@ app.get('/api/grades', (req, res) => {
 });
 
 app.post('/api/grades', (req, res) => {
-  grades[nextId++] = req.body;
-  res.status(201).send(grades);
+  const currentId = nextId++;
+  const newObj = req.body;
+  newObj.id = currentId;
+  grades[currentId] = newObj;
+  res.status(201).send(newObj);
 });
 
 // name="Brendan Eich" course=JavaScript score=100
