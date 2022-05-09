@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const data = require('./data.json');
 
 const app = express();
 const expressJson = express.json();
@@ -10,12 +11,6 @@ app.listen(3000, () => {
 });
 
 app.use(expressJson);
-
-let data;
-fs.readFile('data.json', 'utf-8', (err, datafile) => {
-  if (err) console.error(err);
-  data = JSON.parse(datafile);
-});
 
 app.get('/api/notes', (req, res) => {
   res.status(200).json(Object.values(data.notes));
@@ -28,7 +23,7 @@ app.get('/api/notes/:id', (req, res) => {
     res.status(400).json({ error: 'id must be a positive integer' });
     return;
   }
-  if (!Object.keys(data.notes).includes(id)) {
+  if (!data.notes[id]) {
     res.status(404).json({ error: `cannot find note with id ${id}` });
     return;
   }
@@ -65,7 +60,7 @@ app.delete('/api/notes/:id', (req, res) => {
     res.status(400).json({ error: 'id must be a positive integer' });
     return;
   }
-  if (!Object.keys(data.notes).includes(id)) {
+  if (!data.notes[id]) {
     res.status(404).json({ error: `cannot find note with id ${id}` });
     return;
   }
@@ -89,7 +84,7 @@ app.put('/api/notes/:id', (req, res) => {
     res.status(400).json({ error: 'id must be a positive integer' });
     return;
   }
-  if (!Object.keys(data.notes).includes(id)) {
+  if (!data.notes[id]) {
     res.status(404).json({ error: `cannot find note with id ${id}` });
     return;
   }
