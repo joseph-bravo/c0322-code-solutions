@@ -1,0 +1,12 @@
+http get localhost:3000/api/notes
+http get localhost:3000/api/notes/2
+http get localhost:3000/api/notes/bababooey
+http post localhost:3000/api/notes/
+http post localhost:3000/api/notes/ content='This is the post ever.'
+http post localhost:3000/api/notes/ content='Yet another post.'
+http get localhost:3000/api/notes
+http delete localhost:3000/api/notes/literallyeverything
+http delete localhost:3000/api/notes/5
+http put localhost:3000/api/notes/1 content='get edited nerd'
+http put localhost:3000/api/notes/2 content='get edited nerd'
+http get localhost:3000/api/notes
