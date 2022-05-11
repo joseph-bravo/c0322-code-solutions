@@ -8,20 +8,20 @@
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/dev/.gitconfig,type=bind"
   ],
   "appPort": [
-    80,    // apache/nginx
-    3000,  // node
-    5000,  // flask
-    8081,  // pgweb
-    9000,  // php-fpm
-    9229,  // node debugger
-    35729  // livereload
+    80, // apache/nginx
+    3000, // node
+    5000, // flask
+    8081, // pgweb
+    9000, // php-fpm
+    9229, // node debugger
+    35729 // livereload
   ],
   "extensions": [
-	"thebearingedge.lfz-code",
-	"esbenp.prettier-vscode",
-	"achil.vscode-javascript-repl",
-	"pranaygp.vscode-css-peek"
-],
+    "thebearingedge.lfz-code",
+    "esbenp.prettier-vscode",
+    "achil.vscode-javascript-repl",
+    "pranaygp.vscode-css-peek"
+  ],
   "remoteUser": "dev",
   "postCreateCommand": "test -f package-lock.json && npm ci",
   "settings": {
@@ -30,25 +30,15 @@
       "source.fixAll.eslint": true,
       "source.fixAll.stylelint": true
     },
-    "editor.fontFamily": "Menlo, Monaco, Consolas, 'Courier New', monospace",
-    "editor.fontSize": 14,
-    "editor.formatOnPaste": true,
-    "editor.minimap.enabled": false,
     "editor.occurrencesHighlight": false,
     "editor.overviewRulerBorder": true,
-    "editor.renderWhitespace": "all",
-    "editor.rulers": [
-      80
-    ],
+    "editor.rulers": [80],
     "editor.snippetSuggestions": "none",
     "editor.tabSize": 2,
     "eslint.alwaysShowStatus": true,
     "eslint.format.enable": true,
     "eslint.run": "onType",
-    "eslint.validate": [
-      "javascript",
-      "javascript-react"
-    ],
+    "eslint.validate": ["javascript", "javascript-react"],
     "explorer.compactFolders": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
@@ -57,7 +47,7 @@
     "files.associations": {
       ".eslintrc": "json",
       ".markuplintrc": "json",
-      ".sql": "plpgsql",
+      "*.sql": "pgsql",
       ".stylelintrc": "json"
     },
     "files.eol": "\n",
@@ -72,7 +62,6 @@
     "liveServer.settings.donotShowInfoMsg": true,
     "liveServer.settings.donotVerifyTags": true,
     "scss.validate": false,
-    "terminal.integrated.fontSize": 14,
     "terminal.integrated.profiles.linux": {
       "bash": {
         "icon": "terminal-bash",
@@ -81,12 +70,7 @@
     },
     "terminal.integrated.tabs.enabled": false,
     "vsicons.dontShowNewVersionMessage": true,
-    "window.restoreWindows": "none",
-    "window.zoomLevel": 0,
-    "workbench.activityBar.visible": false,
     "workbench.enableExperiments": false,
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.panel.defaultLocation": "right",
-    "workbench.startupEditor": "none"
+    "workbench.iconTheme": "vscode-icons"
   }
 }
