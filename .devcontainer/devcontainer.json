@@ -17,11 +17,12 @@
     35729 // livereload
   ],
   "extensions": [
-    "thebearingedge.lfz-code",
-    "esbenp.prettier-vscode",
-    "achil.vscode-javascript-repl",
-    "pranaygp.vscode-css-peek"
-  ],
+	"thebearingedge.lfz-code",
+	"esbenp.prettier-vscode",
+	"achil.vscode-javascript-repl",
+	"pranaygp.vscode-css-peek",
+	"plievone.vscode-template-literal-editor"
+],
   "remoteUser": "dev",
   "postCreateCommand": "test -f package-lock.json && npm ci",
   "settings": {
