@@ -24,54 +24,5 @@
 	"bradymholt.pgformatter"
 ],
   "remoteUser": "dev",
-  "postCreateCommand": "test -f package-lock.json && npm ci",
-  "settings": {
-    "css.validate": false,
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true,
-      "source.fixAll.stylelint": true
-    },
-    "editor.occurrencesHighlight": false,
-    "editor.overviewRulerBorder": true,
-    "editor.rulers": [80],
-    "editor.snippetSuggestions": "none",
-    "editor.tabSize": 2,
-    "eslint.alwaysShowStatus": true,
-    "eslint.format.enable": true,
-    "eslint.run": "onType",
-    "eslint.validate": ["javascript", "javascript-react"],
-    "explorer.compactFolders": false,
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.openEditors.visible": 0,
-    "extensions.ignoreRecommendations": true,
-    "files.associations": {
-      ".eslintrc": "json",
-      ".markuplintrc": "json",
-      "*.sql": "pgsql",
-      ".stylelintrc": "json"
-    },
-    "files.eol": "\n",
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "javascript.suggest.autoImports": false,
-    "javascript.suggestionActions.enabled": false,
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "javascript.validate.enable": false,
-    "less.validate": false,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "liveServer.settings.donotVerifyTags": true,
-    "scss.validate": false,
-    "terminal.integrated.profiles.linux": {
-      "bash": {
-        "icon": "terminal-bash",
-        "path": "/usr/bin/bash"
-      }
-    },
-    "terminal.integrated.tabs.enabled": false,
-    "vsicons.dontShowNewVersionMessage": true,
-    "workbench.enableExperiments": false,
-    "workbench.iconTheme": "vscode-icons"
-  }
+  "postCreateCommand": "test -f package-lock.json && npm ci"
 }
