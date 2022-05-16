@@ -1,19 +1,22 @@
 {
-  "name": "code-solutions",
-  "image": "thebearingedge/code-container",
+  "name": "${containerWorkspaceFolderBasename}",
+  "image": "thebearingedge/code-container:latest",
   "mounts": [
-    // get access to the host docker daemon
+    // mount host docker socket
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
-    // mount Git configuration
-    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/dev/.gitconfig,type=bind"
+    // mount ssh config
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/dev/.ssh,type=bind",
+    // mount git config
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/dev/.gitconfig,type=bind",
+    // persist postgres data
+    "target=/var/lib/postgresql",
+    // persist vscode extensions
+    "target=/home/vscode/.vscode-server/extensions"
   ],
   "appPort": [
-    80, // apache/nginx
     3000, // node
     5000, // flask
     8081, // pgweb
-    9000, // php-fpm
-    9229, // node debugger
     35729 // livereload
   ],
   "extensions": [
@@ -23,7 +26,8 @@
 	"pranaygp.vscode-css-peek",
   "plievone.vscode-template-literal-editor",
   "bradymholt.pgformatter"
-],
-  "remoteUser": "dev",
-  "postCreateCommand": "test -f package-lock.json && npm ci"
+  ],
+  "remoteUser": "vscode",
+  "containerUser": "vscode",
+  "postCreateCommand": "curl -fsSL https://raw.githubusercontent.com/thebearingedge/code-container/main/post-create-command.sh | sh"
 }
