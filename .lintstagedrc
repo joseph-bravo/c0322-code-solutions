@@ -1,9 +1,9 @@
 {
+  "*.html": [
+    "markuplint"
+  ],
   "*.css": [
     "stylelint --fix"
-  ],
-  "*.html": [
-    "markuplint --fix"
   ],
   "*.{js,jsx}": [
     "eslint --fix"
