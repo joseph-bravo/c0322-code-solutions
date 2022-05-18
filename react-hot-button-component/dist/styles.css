@@ -1,0 +1,55 @@
+:root {
+  font-family: "Segoe UI", sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  color: white;
+  box-shadow: 5px 5px black;
+  background: indigo;
+  transition: color 0.1s;
+  transition: transform 25ms;
+  transition: box-shadow 25ms;
+}
+
+button:active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.button-1 {
+  background: slateblue;
+}
+
+.button-2 {
+  background: salmon;
+}
+
+.button-3 {
+  background: sandybrown;
+}
+
+.button-4 {
+  background: yellow;
+}
+
+.button-5 {
+  background: white;
+}
+
+.button-3,
+.button-4,
+.button-5 {
+  color: black;
+}
