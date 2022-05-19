@@ -1,0 +1,40 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.stopwatch button.count {
+  user-select: none;
+  background: unset;
+  border: 2px solid black;
+  font-size: 2rem;
+  font-weight: bolder;
+  padding: 2rem 4rem;
+  border-radius: 9999px;
+}
+
+.stopwatch button.count.on {
+  cursor: pointer;
+}
+
+.stopwatch button.toggler {
+  cursor: pointer;
+  background: unset;
+  border: none;
+  font-size: 1.5rem;
+}
