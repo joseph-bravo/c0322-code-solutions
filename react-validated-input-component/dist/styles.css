@@ -1,0 +1,43 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form.password-form > label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+form.password-form > label > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+form.password-form > label > div > i {
+  width: 1rem;
+}
+
+form.password-form > label > div > i.fa-xmark {
+  color: red;
+}
+
+form.password-form > label > div > i.fa-check {
+  color: green;
+}
+
+.error-message {
+  font-size: 0.75rem;
+  color: red;
+}
