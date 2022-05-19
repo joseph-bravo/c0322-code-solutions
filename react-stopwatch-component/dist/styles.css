@@ -28,7 +28,7 @@
   border-radius: 9999px;
 }
 
-.stopwatch button.count.on {
+.stopwatch button.count.off {
   cursor: pointer;
 }
 

@@ -32,8 +32,7 @@ export default class Stopwatch extends React.Component {
   }
 
   handleFaceClick() {
-    if (this.state.isPlaying) {
-      this.turnOff();
+    if (!this.state.isPlaying) {
       this.setState({ time: 0 });
     }
   }
