@@ -42,15 +42,30 @@ class App extends React.Component {
         />
         <div className="app">
           <header>
-            <button onClick={this.openModal}>Toggle Drawer</button>
-            <h1>this is some epic gamer content</h1>
+            <div className="container">
+              <button className="toggle-drawer" onClick={this.openModal}>
+                <i className="fa-solid fa-bars"></i>
+              </button>
+              <h1>this is some epic gamer content</h1>
+            </div>
           </header>
-          <h2>bababooey</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ducimus
-            vel possimus, eligendi molestiae autem consequuntur? Deserunt vero
-            ullam modi!
-          </p>
+          <div className="container content">
+            <h2>bababooey</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo
+              fugit hic autem optio molestiae perferendis nulla omnis eos,
+              dolorem repudiandae minus nam, sint possimus neque! Odit fugit
+              explicabo harum, repellendus quod modi voluptatem earum, magnam
+              eveniet, dolor labore mollitia voluptatum magni ipsa consequuntur.
+              Quis facere ipsum error, eaque cumque autem cum corporis
+              voluptatem dolore magni obcaecati modi doloribus eos deserunt.
+              Consectetur quas ipsa, nulla repellat architecto dolores obcaecati
+              inventore quia iure! Neque accusantium ratione ipsam eveniet
+              voluptate doloribus dolor laborum quas aut. Ad nostrum expedita
+              omnis, iste quae, ratione provident sequi nobis adipisci modi nemo
+              non sint saepe sed eligendi?
+            </p>
+          </div>
         </div>
       </>
     );

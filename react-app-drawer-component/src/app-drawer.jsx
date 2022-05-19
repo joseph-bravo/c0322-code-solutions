@@ -7,7 +7,7 @@ export default class AppDrawer extends React.Component {
   }
 
   handleClickOutside(e) {
-    if (e.target.matches('.app-drawer__container')) {
+    if (e.target.matches('.app-drawer-container')) {
       this.props.closeModal();
     }
   }
@@ -19,8 +19,8 @@ export default class AppDrawer extends React.Component {
     return (
       <div
         onClick={this.handleClickOutside}
-        className={`app-drawer__container ${isModalOpen ? 'open' : 'closed'}`}>
-        <div className="app-drawer__content">
+        className={`app-drawer-container ${isModalOpen ? 'open' : 'closed'}`}>
+        <div className="app-drawer-content">
           <h1>Menu</h1>
           <nav>
             <ul>
