@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+  display: block;
+}
+
+.app-drawer-container {
+  pointer-events: none;
+  user-select: none;
+  position: fixed;
+  transition: background-color 400ms ease-in-out;
+  background-color: none;
+  height: 100vh;
+  min-width: 100vw;
+}
+
+.app-drawer-container.open {
+  pointer-events: auto;
+  background-color: rgb(0 0 0 / 25%);
+  height: 100vh;
+  min-width: 100vw;
+}
+
+.app-drawer-content {
+  position: relative;
+  transition: left 400ms ease-in-out;
+  width: fit-content;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 3rem;
+  gap: 1rem;
+}
+
+.app-drawer-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.app-drawer-content ul li button {
+  all: unset;
+  cursor: pointer;
+  transition: color 100ms;
+}
+
+.app-drawer-content ul li button:hover {
+  color: darkgray;
+}
+
+.app-drawer-container.open .app-drawer-content {
+  left: 0;
+}
+
+.app-drawer-container.closed .app-drawer-content {
+  left: -50vw;
+}
+
+.app {
+  text-align: center;
+}
+
+.app header {
+  background-color: aliceblue;
+}
+
+.app header div.container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto 1fr;
+  padding: 0 4rem;
+}
+
+.app header div.container button.toggle-drawer {
+  all: unset;
+  cursor: pointer;
+  width: fit-content;
+  font-size: 3rem;
+}
+
+.container {
+  padding: 0 4rem;
+}
+
+.app .content {
+  padding-top: 4rem;
+}
