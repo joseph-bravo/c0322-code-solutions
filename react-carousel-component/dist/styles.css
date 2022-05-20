@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+}
+
+li,
+ul {
+  all: unset;
+  display: block;
+}
+
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  background: palegreen;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.carousel {
+  border: 2px solid blue;
+  display: flex;
+  justify-content: center;
+  height: 24rem;
+}
+
+.carousel .image-wrapper {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel img {
+  object-fit: cover;
+}
+
+.carousel .image-wrapper.hidden {
+  display: none;
+}
