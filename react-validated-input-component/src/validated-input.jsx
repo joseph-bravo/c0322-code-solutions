@@ -22,9 +22,9 @@ export default class ValidatedInput extends React.Component {
       return 2;
     }
     if (
-      !/[a-z]/.test(pw) &&
-      !/[A-Z]/.test(pw) &&
-      !/[\d]/.test(pw) &&
+      !/[a-z]/.test(pw) ||
+      !/[A-Z]/.test(pw) ||
+      !/[\d]/.test(pw) ||
       !/[!@#$&^*()]/.test(pw)
     ) {
       return 3;
@@ -70,7 +70,7 @@ export default class ValidatedInput extends React.Component {
             <input
               className="password-form-input"
               onChange={this.handleChange}
-              type="text"
+              type="password"
               name="password"
             />
             {icon}
