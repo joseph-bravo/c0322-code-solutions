@@ -21,6 +21,14 @@ export default class ValidatedInput extends React.Component {
     if (pw.length < 8) {
       return 2;
     }
+    if (
+      !/[\p{Ll}]/.test(pw) &&
+      !/[\p{Lu}]/.test(pw) &&
+      !/[\p{N}]/.test(pw) &&
+      !/[!@#$&^*()]/.test(pw)
+    ) {
+      return 3;
+    }
     return 0;
   }
 
@@ -41,6 +49,15 @@ export default class ValidatedInput extends React.Component {
       case 2:
         errorMessage = (
           <p className="error-message error">Your password is too short.</p>
+        );
+        icon = <i className="fa-solid fa-xmark"></i>;
+        break;
+      case 3:
+        errorMessage = (
+          <p className="error-message error">
+            Password must contain an upper and lowercase letter, digit, and
+            special character.
+          </p>
         );
         icon = <i className="fa-solid fa-xmark"></i>;
     }
