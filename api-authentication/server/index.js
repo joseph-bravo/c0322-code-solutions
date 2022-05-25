@@ -55,12 +55,12 @@ app.post('/api/auth/sign-in', (req, res, next) => {
     from
       "users"
     where
-      "username" = '${username}'
+      "username" = $1
   `;
 
   let user;
 
-  db.query(sql)
+  db.query(sql, [username])
     .then(sqlResult => {
       if (!sqlResult.rows[0]) {
         throw new ClientError(401, 'invalid login');
@@ -80,24 +80,6 @@ app.post('/api/auth/sign-in', (req, res, next) => {
       res.status(200).json(token);
     })
     .catch(next);
-
-  /**
-   * Query the database to find the "userId" and "hashedPassword" for the "username".
-   * Then, 😉
-   *    If no user is found,
-   *      throw a 401: 'invalid login' error.
-   *    If a user is found,
-   *      confirm that the password included in the request body matches the "hashedPassword" with `argon2.verify()`
-   *      Then, 😉
-   *        If the password does not match,
-   *          throw a 401: 'invalid login' error.
-   *        If the password does match,
-   *          Create a payload object containing the user's "userId" and "username".
-   *          Create a new signed token with `jwt.sign()`, using the payload and your TOKEN_SECRET
-   *          Send the client a 200 response containing the payload and the token.
-   *      Catch any error.
-   * Catch any error.
-   */
 });
 
 app.use(errorMiddleware);
